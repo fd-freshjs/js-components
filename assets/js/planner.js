@@ -1,6 +1,5 @@
+const clock = document.querySelector('#clock');
 
-const id = setTimeout(() => {
-  alert('Hello');
-}, 2000);
-
-clearTimeout(id);
+const id = setInterval(() => {
+  clock.textContent += 'a';
+}, 1000);
