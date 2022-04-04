@@ -11,10 +11,24 @@ const imgs = [
 const slider = document.querySelector('#slider');
 
 let currentSlide = 0;
-slider.src = imgs[currentSlide];
+for (const src of imgs) {
+  const img = document.createElement('img');
+  img.src = src;
+  img.style.width = '400px';
+
+  slider.append(img);
+}
+
+const startSlide = slider.children[0];
+startSlide.classList.add('show');
 
 function nextSlide() {
-  slider.src = imgs[currentSlide];
+  for (const elem of slider.children) {
+    elem.classList.remove('show');
+  }
+
+  const slide = slider.children[currentSlide];
+  slide.classList.add('show');
 
   if (currentSlide < imgs.length - 1) {
     currentSlide++;
