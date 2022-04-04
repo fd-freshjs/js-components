@@ -30,11 +30,7 @@ function nextSlide() {
   const slide = slider.children[currentSlide];
   slide.classList.add('show');
 
-  if (currentSlide < imgs.length - 1) {
-    currentSlide++;
-  } else {
-    currentSlide = 0;
-  }
+  currentSlide = (currentSlide + 1) % imgs.length;
 }
 
 function startSlideshow() {
