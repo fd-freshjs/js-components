@@ -5,3 +5,5 @@ const id = setInterval(() => {
   clock.textContent = seconds;
   seconds++;
 }, 1000);
+
+
