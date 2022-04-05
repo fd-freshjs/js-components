@@ -1,5 +1,7 @@
 const clock = document.querySelector('#clock');
+let seconds = 0;
 
 const id = setInterval(() => {
-  clock.textContent += 'a';
+  clock.textContent = seconds;
+  seconds++;
 }, 1000);

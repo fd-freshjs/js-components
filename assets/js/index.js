@@ -1,7 +1,9 @@
 const mainElem = document.querySelector('main');
 
 const links = [
-  { href: 'google.com', text: 'Google' },
+  { href: 'https://google.com', text: 'Google' },
 ];
 
-mainElem.innerHTML = NavList({ links: links });
+const nav = new NavList();
+nav.options = { links: links };
+mainElem.append(nav.render());

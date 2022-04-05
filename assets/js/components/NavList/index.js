@@ -1,21 +1,30 @@
 
-function NavList(options = {}) {
-
-  let listString = '';
-
-  for (let i = 0; i < options.links.length; i++) {
-    const value = options.links[i];
-
-    listString += NavButton(value);
+class NavList {
+  constructor() {
+    this.options = {};
+    this.state = {};
   }
 
-  const NavListHTML = `
-    <nav class=${options.className}>
-      <ul>
-        ${listString}
-      </ul>
-    </nav>
-  `;
+  isHover() {
+    this.state.hover = true;
+  }
 
-  return NavListHTML;
+  render() {
+    const nav = document.createElement('nav');
+    nav.className = this.options.className;
+
+    const ul = document.createElement('ul');
+    nav.append(ul);
+    
+    for (let i = 0; i < this.options.links.length; i++) {
+      const value = this.options.links[i];
+
+      const navBtn = NavButton(value);
+
+      navBtn.addEventListener('mouseenter', this.isHover);
+      ul.append(navBtn);
+    }
+
+    return nav;
+  }
 }
