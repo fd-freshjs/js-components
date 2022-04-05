@@ -1,7 +1,7 @@
 const mainElem = document.querySelector('main');
 
 const links = [
-  { href: 'https://google.com', text: 'Google' },
+  { href: '/slider', text: 'Slider' },
 ];
 
 const nav = new NavList();
