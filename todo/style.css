@@ -1,0 +1,16 @@
+.todoForm {
+  display: flex;
+}
+
+.submitBtn {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  background-color: rgb(70, 70, 236);
+}
