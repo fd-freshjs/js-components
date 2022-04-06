@@ -28,7 +28,7 @@ function onSubmit(event) {
 
 // массив обьектов задач
 const tasks = [];
-// отрисовать старые задачи
+// отрисовать старые задачи после перезагрузки страницы
 function initTasks() {
   // достать задачи из хранилища
   const string = localStorage.getItem('tasks');
@@ -39,7 +39,7 @@ function initTasks() {
     tasks.push(...taskArr);
   }
 
-  // вывести на страницу
+  // вывести все задачи на страницу
   for(const task of tasks) {
     addTaskToHTML(task.text, task.done);
   }
@@ -68,7 +68,7 @@ function changeTask(index, data = {}) {
   // записать все задачи в хранилище
   writeToStorage();
 }
-// записать все задачи в хранилище
+// записать все задачи в хранилище (защита от потери данных при перезагрузке страницы)
 function writeToStorage() {
   // перевести массив в строку
   const string = JSON.stringify(tasks);
