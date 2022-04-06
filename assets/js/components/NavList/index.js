@@ -8,9 +8,7 @@ class NavList {
     this.state.hover = true;
   }
 
-  createLink() {
-    const value = this.options.links[i];
-
+  createLink(value) {
     const navBtn = NavButton(value);
 
     navBtn.addEventListener("mouseenter", this.isHover);
@@ -26,7 +24,8 @@ class NavList {
     nav.append(ul);
 
     for (let i = 0; i < this.options.links.length; i++) {
-      ul.append(createLink());
+      const value = this.options.links[i];
+      ul.append(this.createLink(value));
     }
 
     return nav;
